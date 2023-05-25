@@ -8,3 +8,12 @@ def movie_list(request):
     print(movies.values())
 
     return JsonResponse({'movies': list(movies.values())})
+
+def nth_movie_details(request, pk):
+    movie = Movie.objects.get(pk=pk)  # pk = primary key
+
+    return JsonResponse({'movie': {
+        'name': movie.name,
+        'description': movie.description,
+        'active': movie.active
+    }})
