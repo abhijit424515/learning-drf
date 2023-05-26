@@ -29,7 +29,7 @@ class StreamPlatformSerializer(serializers.ModelSerializer):
     # )  # the one we defined in __str__
 
     # watchlist = serializers.HyperlinkedRelatedField(
-    #     many=True, read_only=True, view_name="watch-list-nth"
+    #     many=True, read_only=True, view_name="watch-detail"
     # )  # the actual api link to the related object
 
     class Meta:
