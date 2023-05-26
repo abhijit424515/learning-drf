@@ -6,21 +6,23 @@ from watchlist_app.api.views import (
     StreamPlatformDetailAV,
     ReviewList,
     ReviewDetail,
+    ReviewCreate,
 )
 
 urlpatterns = [
-    path("watch-list/", WatchListAV.as_view(), name="watch-list"),
-    path("watch-list/<int:pk>", WatchDetailAV.as_view(), name="watch-list-nth"),
+    path("watch/", WatchListAV.as_view(), name="watch-list"),
+    path("watch/<int:pk>", WatchDetailAV.as_view(), name="watch-list-nth"),
     path(
-        "stream-platform-list/",
+        "stream/",
         StreamPlatformListAV.as_view(),
-        name="stream-platform-list",
+        name="stream",
     ),
     path(
-        "stream-platform-list/<int:pk>",
+        "stream/<int:pk>",
         StreamPlatformDetailAV.as_view(),
         name="stream-platform-list-nth",
     ),
-    path("review/", ReviewList.as_view(), name="review-list"),
-    path("review/<int:pk>", ReviewDetail.as_view(), name="review-detail"),
+    path("watch/<int:pk>/review/", ReviewList.as_view(), name="review-list"),
+    path("watch/<int:pk>/review-create/", ReviewCreate.as_view(), name="review-create"),
+    path("watch/review/<int:pk>", ReviewDetail.as_view(), name="review-detail"),
 ]
