@@ -4,6 +4,8 @@ from watchlist_app.api.views import (
     WatchDetailAV,
     StreamPlatformListAV,
     StreamPlatformDetailAV,
+    ReviewList,
+    ReviewDetail,
 )
 
 urlpatterns = [
@@ -19,4 +21,6 @@ urlpatterns = [
         StreamPlatformDetailAV.as_view(),
         name="stream-platform-list-nth",
     ),
+    path("review/", ReviewList.as_view(), name="review-list"),
+    path("review/<int:pk>", ReviewDetail.as_view(), name="review-detail"),
 ]
