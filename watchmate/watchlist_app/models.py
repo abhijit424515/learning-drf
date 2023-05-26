@@ -16,7 +16,9 @@ class WatchList(models.Model):
     active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     platform = models.ForeignKey(
-        StreamPlatform, on_delete=models.CASCADE, related_name="watchlist"
+        StreamPlatform,
+        on_delete=models.CASCADE,
+        related_name="watchlist",  # this related_name is the field name in the corresponding serializer
     )
 
     def __str__(self) -> str:
